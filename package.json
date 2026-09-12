@@ -1,0 +1,19 @@
+{
+    "name": "sona",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Privacy-first, unbiased, open-source social platform.",
+    "license": "AGPL-3.0",
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "lint": "turbo run lint"
+    },
+    "devDependencies": {
+        "turbo": "^2.0.0"
+    }
+}
