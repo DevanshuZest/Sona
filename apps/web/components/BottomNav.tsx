@@ -1,37 +1,59 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { createClient } from "@/lib/supabase/client";
 
-const items = [
-    { href: "/", label: "Home", symbol: "⌂" },
-    { href: "/notifications", label: "Alerts", symbol: "♡" },
-    { href: "/settings", label: "Settings", symbol: "⚙" },
-];
+const focusClasses =
+    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F766E]";
 
 export default function BottomNav() {
     const pathname = usePathname();
+    const [username, setUsername] = useState<string>("");
+
+    useEffect(() => {
+        const supabase = createClient();
+        supabase.auth.getUser().then(({ data: { user } }) => {
+            if (!user) return;
+            supabase
+                .from("sona_profiles")
+                .select("username")
+                .eq("id", user.id)
+                .single()
+                .then(({ data }) => {
+                    if (data?.username) setUsername(data.username);
+                });
+        });
+    }, []);
+
+    const items = [
+        { key: "home", href: "/", label: "Home" },
+        { key: "search", href: "/search", label: "Search" },
+        { key: "compose", href: "/compose", label: "Compose" },
+        { key: "profile", href: username ? `/u/${username}` : "/login", label: "Profile" },
+    ];
+
+    const isActive = (key: string, href: string) => {
+        if (key === "home") return pathname === "/";
+        if (key === "profile") return pathname.startsWith("/u/");
+        return pathname.startsWith(href);
+    };
 
     return (
-        <nav
-            aria-label="Primary navigation"
-            className="fixed inset-x-0 bottom-0 z-40 border-t border-[#E7E5E4] bg-white md:hidden"
-        >
-            <div className="mx-auto flex max-w-[680px] justify-around px-4 py-2">
+        <nav aria-label="Primary" className="fixed bottom-0 left-0 right-0 z-40 sm:hidden">
+            <div className="flex h-14 w-full max-w-[680px] items-center border-t border-[#E7E5E4] bg-white">
                 {items.map((item) => {
-                    const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-
+                    const active = isActive(item.key, item.href);
                     return (
                         <Link
-                            key={item.href}
+                            key={item.key}
                             href={item.href}
                             aria-current={active ? "page" : undefined}
-                            className={`flex min-w-16 flex-col items-center gap-0.5 rounded-lg px-3 py-1 text-xs font-medium ${active ? "text-[#0F766E]" : "text-[#78716C]"
-                                }`}
+                            className={`flex min-h-[44px] min-w-[44px] flex-1 items-center justify-center text-sm ${focusClasses} ${
+                                active ? "text-[#0F766E] font-medium" : "text-[#78716C]"
+                            }`}
                         >
-                            <span aria-hidden="true" className="text-lg leading-5">
-                                {item.symbol}
-                            </span>
                             {item.label}
                         </Link>
                     );

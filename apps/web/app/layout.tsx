@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,11 +25,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-[var(--sona-color-bg-canvas)] text-[var(--sona-color-text-primary)]`}>
         <Header />
-        <main className="mx-auto max-w-[680px] w-full px-4 py-4 sm:px-6 lg:px-8 pb-16 md:pb-4">
+        <main className="mx-auto max-w-[680px] w-full px-4 py-6 pb-20 sm:pb-6">
           {children}
         </main>
         <Footer />
         <BottomNav />
+        <CookieConsent />
       </body>
     </html>
   );

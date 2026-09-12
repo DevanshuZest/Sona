@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function Loading() {
+export default function NotificationsLoading() {
     const [reducedMotion, setReducedMotion] = useState(false);
 
     useEffect(() => {
@@ -18,12 +18,14 @@ export default function Loading() {
     const pulse = reducedMotion ? "" : "animate-pulse";
 
     return (
-        <div className="space-y-4">
-            {[...Array(3)].map((_, i) => (
-                <div key={i} className={`rounded-xl border border-[#E7E5E4] bg-white p-4 h-28 ${pulse}`}>
-                    <div className="h-4 w-32 rounded bg-[#F5F3F0] mb-3" />
-                    <div className="h-4 w-full rounded bg-[#F5F3F0] mb-2" />
-                    <div className="h-4 w-2/3 rounded bg-[#F5F3F0]" />
+        <div className="divide-y divide-[#E7E5E4]">
+            {[...Array(5)].map((_, i) => (
+                <div key={i} className={`flex items-center gap-3 px-4 py-3 ${pulse}`}>
+                    <div className="h-8 w-8 shrink-0 rounded-full bg-[#F5F3F0]" />
+                    <div className="flex-1 space-y-2">
+                        <div className="h-3 w-2/3 rounded bg-[#F5F3F0]" />
+                        <div className="h-3 w-1/2 rounded bg-[#F5F3F0]" />
+                    </div>
                 </div>
             ))}
         </div>
