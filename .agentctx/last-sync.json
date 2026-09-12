@@ -1,0 +1,37 @@
+{
+  "CLAUDE.md": {
+    "sourceSha": "cfb092168a04e75d31bf48ba30fa8a8af8d2476595c1f4e3c50d6391c1cbf1af",
+    "contentChecksum": "1d104bfb94cd594f27d443855abf9042c8a4eaed9fd952c787c2f84c6652ad45",
+    "syncedAt": "2026-09-12T22:27:03.248Z"
+  },
+  "AGENTS.md": {
+    "sourceSha": "cfb092168a04e75d31bf48ba30fa8a8af8d2476595c1f4e3c50d6391c1cbf1af",
+    "contentChecksum": "b0350e9dceb39737dc32194796a3297123b5c3d45a1efec42c4b2d522d1ed9fc",
+    "syncedAt": "2026-09-12T22:27:03.248Z"
+  },
+  ".cursorrules": {
+    "sourceSha": "cfb092168a04e75d31bf48ba30fa8a8af8d2476595c1f4e3c50d6391c1cbf1af",
+    "contentChecksum": "f5f58ed6cbfaf148abb0e3566a7c2ecb2bf18b5632f9a589901d263f8970c2ff",
+    "syncedAt": "2026-09-12T22:27:03.248Z"
+  },
+  ".cursor/rules/agentctx.mdc": {
+    "sourceSha": "cfb092168a04e75d31bf48ba30fa8a8af8d2476595c1f4e3c50d6391c1cbf1af",
+    "contentChecksum": "d87365408b08fb6bb07200a8ec41c26b7667cd74f9cea386b72f9a9542f24bd4",
+    "syncedAt": "2026-09-12T22:27:03.248Z"
+  },
+  ".clinerules": {
+    "sourceSha": "cfb092168a04e75d31bf48ba30fa8a8af8d2476595c1f4e3c50d6391c1cbf1af",
+    "contentChecksum": "3a2003c0f9fb6005bb01386d557eb85a5410a343c13150211a5ea3dc7c111683",
+    "syncedAt": "2026-09-12T22:27:03.248Z"
+  },
+  ".windsurfrules": {
+    "sourceSha": "cfb092168a04e75d31bf48ba30fa8a8af8d2476595c1f4e3c50d6391c1cbf1af",
+    "contentChecksum": "bee4c19cdbe8f86e7cebb67a757a81e68727ff10396730b38cd54169c1c2e168",
+    "syncedAt": "2026-09-12T22:27:03.248Z"
+  },
+  ".github/copilot-instructions.md": {
+    "sourceSha": "cfb092168a04e75d31bf48ba30fa8a8af8d2476595c1f4e3c50d6391c1cbf1af",
+    "contentChecksum": "4ff4cc81c692aac6f44a3f27f521241d2706807c3e5700cbcb5d584531ede988",
+    "syncedAt": "2026-09-12T22:27:03.248Z"
+  }
+}

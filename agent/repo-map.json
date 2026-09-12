@@ -1,0 +1,1439 @@
+{
+  "version": 1,
+  "summary": {
+    "totalFiles": 77,
+    "totalLines": 2541,
+    "languages": [
+      {
+        "language": "TypeScript",
+        "files": 28,
+        "lines": 1366
+      },
+      {
+        "language": "SQL",
+        "files": 7,
+        "lines": 532
+      },
+      {
+        "language": "Markdown",
+        "files": 10,
+        "lines": 210
+      },
+      {
+        "language": "JSON",
+        "files": 4,
+        "lines": 96
+      },
+      {
+        "language": "YAML",
+        "files": 2,
+        "lines": 62
+      },
+      {
+        "language": "CSS",
+        "files": 1,
+        "lines": 50
+      },
+      {
+        "language": "JavaScript",
+        "files": 1,
+        "lines": 7
+      }
+    ]
+  },
+  "tree": {
+    "name": "sona",
+    "path": "",
+    "type": "dir",
+    "children": [
+      {
+        "name": ".agentctx",
+        "path": ".agentctx",
+        "type": "dir",
+        "children": [
+          {
+            "name": "config.yaml",
+            "path": ".agentctx/config.yaml",
+            "type": "file",
+            "lineCount": 10,
+            "language": "YAML",
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": "agent",
+        "path": "agent",
+        "type": "dir",
+        "children": [
+          {
+            "name": "workflows",
+            "path": "agent/workflows",
+            "type": "dir",
+            "children": [
+              {
+                "name": "debugging.md",
+                "path": "agent/workflows/debugging.md",
+                "type": "file",
+                "lineCount": 25,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "deployment.md",
+                "path": "agent/workflows/deployment.md",
+                "type": "file",
+                "lineCount": 27,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "testing.md",
+                "path": "agent/workflows/testing.md",
+                "type": "file",
+                "lineCount": 27,
+                "language": "Markdown",
+                "role": "doc"
+              }
+            ]
+          },
+          {
+            "name": ".agentctxignore",
+            "path": "agent/.agentctxignore",
+            "type": "file",
+            "lineCount": 0,
+            "language": null,
+            "role": "source"
+          },
+          {
+            "name": "architecture.md",
+            "path": "agent/architecture.md",
+            "type": "file",
+            "lineCount": 32,
+            "language": "Markdown",
+            "role": "doc"
+          },
+          {
+            "name": "coding-rules.md",
+            "path": "agent/coding-rules.md",
+            "type": "file",
+            "lineCount": 26,
+            "language": "Markdown",
+            "role": "doc"
+          },
+          {
+            "name": "domain-knowledge.md",
+            "path": "agent/domain-knowledge.md",
+            "type": "file",
+            "lineCount": 25,
+            "language": "Markdown",
+            "role": "doc"
+          },
+          {
+            "name": "manifest.yaml",
+            "path": "agent/manifest.yaml",
+            "type": "file",
+            "lineCount": 52,
+            "language": "YAML",
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": "apps",
+        "path": "apps",
+        "type": "dir",
+        "children": [
+          {
+            "name": "core",
+            "path": "apps/core",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "apps/core/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "feed",
+            "path": "apps/feed",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "apps/feed/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "guard",
+            "path": "apps/guard",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "apps/guard/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "vault",
+            "path": "apps/vault",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "apps/vault/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "web",
+            "path": "apps/web",
+            "type": "dir",
+            "children": [
+              {
+                "name": "app",
+                "path": "apps/web/app",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "auth",
+                    "path": "apps/web/app/auth",
+                    "type": "dir",
+                    "children": [
+                      {
+                        "name": "callback",
+                        "path": "apps/web/app/auth/callback",
+                        "type": "dir",
+                        "children": [
+                          {
+                            "name": "route.ts",
+                            "path": "apps/web/app/auth/callback/route.ts",
+                            "type": "file",
+                            "lineCount": 18,
+                            "language": "TypeScript",
+                            "role": "source"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "login",
+                    "path": "apps/web/app/login",
+                    "type": "dir",
+                    "children": [
+                      {
+                        "name": "page.tsx",
+                        "path": "apps/web/app/login/page.tsx",
+                        "type": "file",
+                        "lineCount": 141,
+                        "language": "TypeScript",
+                        "role": "source"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "reset",
+                    "path": "apps/web/app/reset",
+                    "type": "dir",
+                    "children": [
+                      {
+                        "name": "confirm",
+                        "path": "apps/web/app/reset/confirm",
+                        "type": "dir",
+                        "children": [
+                          {
+                            "name": "page.tsx",
+                            "path": "apps/web/app/reset/confirm/page.tsx",
+                            "type": "file",
+                            "lineCount": 30,
+                            "language": "TypeScript",
+                            "role": "source"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "page.tsx",
+                        "path": "apps/web/app/reset/page.tsx",
+                        "type": "file",
+                        "lineCount": 19,
+                        "language": "TypeScript",
+                        "role": "source"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "settings",
+                    "path": "apps/web/app/settings",
+                    "type": "dir",
+                    "children": [
+                      {
+                        "name": "page.tsx",
+                        "path": "apps/web/app/settings/page.tsx",
+                        "type": "file",
+                        "lineCount": 133,
+                        "language": "TypeScript",
+                        "role": "source"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "u",
+                    "path": "apps/web/app/u",
+                    "type": "dir",
+                    "children": [
+                      {
+                        "name": "[username]",
+                        "path": "apps/web/app/u/[username]",
+                        "type": "dir",
+                        "children": [
+                          {
+                            "name": "follow-button.tsx",
+                            "path": "apps/web/app/u/[username]/follow-button.tsx",
+                            "type": "file",
+                            "lineCount": 76,
+                            "language": "TypeScript",
+                            "role": "source"
+                          },
+                          {
+                            "name": "page.tsx",
+                            "path": "apps/web/app/u/[username]/page.tsx",
+                            "type": "file",
+                            "lineCount": 15,
+                            "language": "TypeScript",
+                            "role": "source"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "composer.tsx",
+                    "path": "apps/web/app/composer.tsx",
+                    "type": "file",
+                    "lineCount": 62,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "favicon.ico",
+                    "path": "apps/web/app/favicon.ico",
+                    "type": "file",
+                    "lineCount": 0,
+                    "language": null,
+                    "role": "source"
+                  },
+                  {
+                    "name": "feed-mode-toggle.tsx",
+                    "path": "apps/web/app/feed-mode-toggle.tsx",
+                    "type": "file",
+                    "lineCount": 50,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "globals.css",
+                    "path": "apps/web/app/globals.css",
+                    "type": "file",
+                    "lineCount": 50,
+                    "language": "CSS",
+                    "role": "source"
+                  },
+                  {
+                    "name": "layout.tsx",
+                    "path": "apps/web/app/layout.tsx",
+                    "type": "file",
+                    "lineCount": 35,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "like-button.tsx",
+                    "path": "apps/web/app/like-button.tsx",
+                    "type": "file",
+                    "lineCount": 73,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "loading.tsx",
+                    "path": "apps/web/app/loading.tsx",
+                    "type": "file",
+                    "lineCount": 38,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "logout-button.tsx",
+                    "path": "apps/web/app/logout-button.tsx",
+                    "type": "file",
+                    "lineCount": 24,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "page.tsx",
+                    "path": "apps/web/app/page.tsx",
+                    "type": "file",
+                    "lineCount": 138,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "post-actions.tsx",
+                    "path": "apps/web/app/post-actions.tsx",
+                    "type": "file",
+                    "lineCount": 81,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "score-explain.tsx",
+                    "path": "apps/web/app/score-explain.tsx",
+                    "type": "file",
+                    "lineCount": 52,
+                    "language": "TypeScript",
+                    "role": "source"
+                  }
+                ]
+              },
+              {
+                "name": "components",
+                "path": "apps/web/components",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "BottomNav.tsx",
+                    "path": "apps/web/components/BottomNav.tsx",
+                    "type": "file",
+                    "lineCount": 42,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "Footer.tsx",
+                    "path": "apps/web/components/Footer.tsx",
+                    "type": "file",
+                    "lineCount": 13,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "Header.tsx",
+                    "path": "apps/web/components/Header.tsx",
+                    "type": "file",
+                    "lineCount": 118,
+                    "language": "TypeScript",
+                    "role": "source"
+                  }
+                ]
+              },
+              {
+                "name": "lib",
+                "path": "apps/web/lib",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "supabase",
+                    "path": "apps/web/lib/supabase",
+                    "type": "dir",
+                    "children": [
+                      {
+                        "name": "client.ts",
+                        "path": "apps/web/lib/supabase/client.ts",
+                        "type": "file",
+                        "lineCount": 8,
+                        "language": "TypeScript",
+                        "role": "source"
+                      },
+                      {
+                        "name": "server.ts",
+                        "path": "apps/web/lib/supabase/server.ts",
+                        "type": "file",
+                        "lineCount": 24,
+                        "language": "TypeScript",
+                        "role": "source"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "analytics.ts",
+                    "path": "apps/web/lib/analytics.ts",
+                    "type": "file",
+                    "lineCount": 14,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "comments.ts",
+                    "path": "apps/web/lib/comments.ts",
+                    "type": "file",
+                    "lineCount": 30,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "notifications.ts",
+                    "path": "apps/web/lib/notifications.ts",
+                    "type": "file",
+                    "lineCount": 27,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "presence.ts",
+                    "path": "apps/web/lib/presence.ts",
+                    "type": "file",
+                    "lineCount": 12,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "safety.ts",
+                    "path": "apps/web/lib/safety.ts",
+                    "type": "file",
+                    "lineCount": 77,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "search.ts",
+                    "path": "apps/web/lib/search.ts",
+                    "type": "file",
+                    "lineCount": 9,
+                    "language": "TypeScript",
+                    "role": "source"
+                  }
+                ]
+              },
+              {
+                "name": "public",
+                "path": "apps/web/public",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "favicon.svg",
+                    "path": "apps/web/public/favicon.svg",
+                    "type": "file",
+                    "lineCount": 0,
+                    "language": null,
+                    "role": "source"
+                  },
+                  {
+                    "name": "file.svg",
+                    "path": "apps/web/public/file.svg",
+                    "type": "file",
+                    "lineCount": 0,
+                    "language": null,
+                    "role": "source"
+                  },
+                  {
+                    "name": "globe.svg",
+                    "path": "apps/web/public/globe.svg",
+                    "type": "file",
+                    "lineCount": 0,
+                    "language": null,
+                    "role": "source"
+                  },
+                  {
+                    "name": "next.svg",
+                    "path": "apps/web/public/next.svg",
+                    "type": "file",
+                    "lineCount": 0,
+                    "language": null,
+                    "role": "source"
+                  },
+                  {
+                    "name": "vercel.svg",
+                    "path": "apps/web/public/vercel.svg",
+                    "type": "file",
+                    "lineCount": 0,
+                    "language": null,
+                    "role": "source"
+                  },
+                  {
+                    "name": "window.svg",
+                    "path": "apps/web/public/window.svg",
+                    "type": "file",
+                    "lineCount": 0,
+                    "language": null,
+                    "role": "source"
+                  }
+                ]
+              },
+              {
+                "name": "supabase",
+                "path": "apps/web/supabase",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "migrations",
+                    "path": "apps/web/supabase/migrations",
+                    "type": "dir",
+                    "children": [
+                      {
+                        "name": "001_notifications.sql",
+                        "path": "apps/web/supabase/migrations/001_notifications.sql",
+                        "type": "file",
+                        "lineCount": 54,
+                        "language": "SQL",
+                        "role": "source"
+                      },
+                      {
+                        "name": "002_comments.sql",
+                        "path": "apps/web/supabase/migrations/002_comments.sql",
+                        "type": "file",
+                        "lineCount": 48,
+                        "language": "SQL",
+                        "role": "source"
+                      },
+                      {
+                        "name": "003_search.sql",
+                        "path": "apps/web/supabase/migrations/003_search.sql",
+                        "type": "file",
+                        "lineCount": 44,
+                        "language": "SQL",
+                        "role": "source"
+                      },
+                      {
+                        "name": "004_presence.sql",
+                        "path": "apps/web/supabase/migrations/004_presence.sql",
+                        "type": "file",
+                        "lineCount": 35,
+                        "language": "SQL",
+                        "role": "source"
+                      },
+                      {
+                        "name": "005_analytics.sql",
+                        "path": "apps/web/supabase/migrations/005_analytics.sql",
+                        "type": "file",
+                        "lineCount": 29,
+                        "language": "SQL",
+                        "role": "source"
+                      },
+                      {
+                        "name": "006_safety.sql",
+                        "path": "apps/web/supabase/migrations/006_safety.sql",
+                        "type": "file",
+                        "lineCount": 116,
+                        "language": "SQL",
+                        "role": "source"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": ".gitignore",
+                "path": "apps/web/.gitignore",
+                "type": "file",
+                "lineCount": 42,
+                "language": null,
+                "role": "config"
+              },
+              {
+                "name": "AGENTS.md",
+                "path": "apps/web/AGENTS.md",
+                "type": "file",
+                "lineCount": 9,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "CLAUDE.md",
+                "path": "apps/web/CLAUDE.md",
+                "type": "file",
+                "lineCount": 1,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "README.md",
+                "path": "apps/web/README.md",
+                "type": "file",
+                "lineCount": 36,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "next.config.ts",
+                "path": "apps/web/next.config.ts",
+                "type": "file",
+                "lineCount": 7,
+                "language": "TypeScript",
+                "role": "config"
+              },
+              {
+                "name": "package.json",
+                "path": "apps/web/package.json",
+                "type": "file",
+                "lineCount": 25,
+                "language": "JSON",
+                "role": "config"
+              },
+              {
+                "name": "postcss.config.mjs",
+                "path": "apps/web/postcss.config.mjs",
+                "type": "file",
+                "lineCount": 7,
+                "language": "JavaScript",
+                "role": "config"
+              },
+              {
+                "name": "tsconfig.json",
+                "path": "apps/web/tsconfig.json",
+                "type": "file",
+                "lineCount": 34,
+                "language": "JSON",
+                "role": "config"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "docs",
+        "path": "docs",
+        "type": "dir",
+        "children": [
+          {
+            "name": ".gitkeep",
+            "path": "docs/.gitkeep",
+            "type": "file",
+            "lineCount": 0,
+            "language": null,
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": "infra",
+        "path": "infra",
+        "type": "dir",
+        "children": [
+          {
+            "name": "docker",
+            "path": "infra/docker",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "infra/docker/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "supabase",
+            "path": "infra/supabase",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "infra/supabase/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "telegram",
+            "path": "infra/telegram",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "infra/telegram/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "packages",
+        "path": "packages",
+        "type": "dir",
+        "children": [
+          {
+            "name": "config",
+            "path": "packages/config",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "packages/config/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "design",
+            "path": "packages/design",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "packages/design/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "sdk",
+            "path": "packages/sdk",
+            "type": "dir",
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "packages/sdk/.gitkeep",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": ".env.example",
+        "path": ".env.example",
+        "type": "file",
+        "lineCount": 0,
+        "language": null,
+        "role": "config"
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "type": "file",
+        "lineCount": 147,
+        "language": null,
+        "role": "config"
+      },
+      {
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "type": "file",
+        "lineCount": 0,
+        "language": null,
+        "role": "doc"
+      },
+      {
+        "name": "MANUAL_RUN_IN_SUPABASE.sql",
+        "path": "MANUAL_RUN_IN_SUPABASE.sql",
+        "type": "file",
+        "lineCount": 206,
+        "language": "SQL",
+        "role": "source"
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "type": "file",
+        "lineCount": 2,
+        "language": "Markdown",
+        "role": "doc"
+      },
+      {
+        "name": "_audit_log.txt",
+        "path": "_audit_log.txt",
+        "type": "file",
+        "lineCount": 29,
+        "language": null,
+        "role": "source"
+      },
+      {
+        "name": "package.json",
+        "path": "package.json",
+        "type": "file",
+        "lineCount": 19,
+        "language": "JSON",
+        "role": "config"
+      },
+      {
+        "name": "turbo.json",
+        "path": "turbo.json",
+        "type": "file",
+        "lineCount": 18,
+        "language": "JSON",
+        "role": "source"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": ".agentctx/config.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 10,
+      "sha": "e1089fb47fbb8f1cc11a7657ff74bcc30ad6db6785695f9c39220d5744d9f29d"
+    },
+    {
+      "path": ".env.example",
+      "role": "config",
+      "language": null,
+      "lineCount": 0,
+      "sha": "cfee60c288f3672989578c97bcecc9e33f0e7486e8227d8436b909d7ea59f8ac"
+    },
+    {
+      "path": ".gitignore",
+      "role": "config",
+      "language": null,
+      "lineCount": 147,
+      "sha": "67e6524ac0256404f0ffbc6ce9340d3397e5d28765b0e53c6d3e949b2c7cbae9"
+    },
+    {
+      "path": "LICENSE",
+      "role": "doc",
+      "language": null,
+      "lineCount": 0,
+      "sha": "6f1e622c82a380075843bb084a7ec3b1f1d12a4a02526d75e78b0924a860aa75"
+    },
+    {
+      "path": "MANUAL_RUN_IN_SUPABASE.sql",
+      "role": "source",
+      "language": "SQL",
+      "lineCount": 206,
+      "sha": "48a8b59fb12ab2513eb4f34457ff4416d597f768aede0628f87ac16e3dfdd5c3"
+    },
+    {
+      "path": "README.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 2,
+      "sha": "48ad6a8ab54ed11a8f5e983ad39cab4e51d865da273db5040d9b113b08d9aadd"
+    },
+    {
+      "path": "_audit_log.txt",
+      "role": "source",
+      "language": null,
+      "lineCount": 29,
+      "sha": "55a675f9caa1624a27848fa7d2b06e73fbaa56b21c1144ea3acee8632ed83969"
+    },
+    {
+      "path": "agent/.agentctxignore",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "6c28f8f9278587862e9dcafcb25068962d0a985d9241c4774f008ce3278bc45b"
+    },
+    {
+      "path": "agent/architecture.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 32,
+      "sha": "7180cbf9dfbb9059a752f6e33081103a5a286b91bc17c0f67cd252840a210f18"
+    },
+    {
+      "path": "agent/coding-rules.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 26,
+      "sha": "d8c7751df89e2787d670d8bb1e6c541c2ec8460b40da72763b874a807e9ecd6d"
+    },
+    {
+      "path": "agent/domain-knowledge.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 25,
+      "sha": "ab913b286a093c0b177b2c18a7a2e7efd9b58b041782b5e52ca0b64a614c647d"
+    },
+    {
+      "path": "agent/manifest.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 52,
+      "sha": "2e6345a83b5c353a054e00acd4acc9ea61ba7d3a181065a1af38f5db5b0c8ed0"
+    },
+    {
+      "path": "agent/workflows/debugging.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 25,
+      "sha": "23de55897f11237c94154896cdf17e9f86d787fcdb0d52e247972d0e521f8cab"
+    },
+    {
+      "path": "agent/workflows/deployment.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 27,
+      "sha": "136a3ef041dc3d33fcc86cca5c343a58e9babe32697a97056b6f6824a5e22d38"
+    },
+    {
+      "path": "agent/workflows/testing.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 27,
+      "sha": "229b0b1907c518e6b5b009c07fd4164d6a923e219a228a3767cf91f6fe069283"
+    },
+    {
+      "path": "apps/core/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/feed/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/guard/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/vault/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "apps/web/.gitignore",
+      "role": "config",
+      "language": null,
+      "lineCount": 42,
+      "sha": "794557a00f8d7e1eb32b9172646bd8cc24b49f5e7b570b799174686376a64d22"
+    },
+    {
+      "path": "apps/web/AGENTS.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 9,
+      "sha": "63f2c50380ed6303237cce215ce27af1d620d094c215e28d1b1538a3c070e3bb"
+    },
+    {
+      "path": "apps/web/CLAUDE.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 1,
+      "sha": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+    },
+    {
+      "path": "apps/web/README.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 36,
+      "sha": "60b55ff7df79af72590f9524208e46642bc32bdc175cdad41349681c0e2f958f"
+    },
+    {
+      "path": "apps/web/app/auth/callback/route.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 18,
+      "sha": "cd314163fb88f9dac9ff05443465be75fb1e1c2e1655dcf86314e4af07f95576"
+    },
+    {
+      "path": "apps/web/app/composer.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 62,
+      "sha": "b4a9c98ed2e51699cc7246cf08e2c278576866ba9bed56a91297bd7601a73cdc"
+    },
+    {
+      "path": "apps/web/app/favicon.ico",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932"
+    },
+    {
+      "path": "apps/web/app/feed-mode-toggle.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 50,
+      "sha": "44174ba786dc1b5a651198e47a1d49ddbd99ea72f970bf335b944424bd350e09"
+    },
+    {
+      "path": "apps/web/app/globals.css",
+      "role": "source",
+      "language": "CSS",
+      "lineCount": 50,
+      "sha": "0ce7ca461671e5b4c49e8367ca74a8bc0dda92133d64c166c094bbe9b1c752fd"
+    },
+    {
+      "path": "apps/web/app/layout.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 35,
+      "sha": "70fa28dd30a6c60ad69e4877febac37ca3c61b04c4a9abbc764cab789b8df12e"
+    },
+    {
+      "path": "apps/web/app/like-button.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 73,
+      "sha": "b0e80418e51373312d09e13249db897bb8a3c897977fb24776457b9a478109dc"
+    },
+    {
+      "path": "apps/web/app/loading.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 38,
+      "sha": "ea73847aadd7c88d38474215acd1cf640c78478a7438fe1825342a9699b61243"
+    },
+    {
+      "path": "apps/web/app/login/page.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 141,
+      "sha": "6242c85abc687f358287d01e7bfeb374f6d094048a670d87bb45ff5fc73f9d81"
+    },
+    {
+      "path": "apps/web/app/logout-button.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 24,
+      "sha": "5e7691a4460c9eda8ac8f2780c5195c6556616c3ddb0b4583a80a239fb45b1b2"
+    },
+    {
+      "path": "apps/web/app/page.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 138,
+      "sha": "cd43892ff9fec3c4aa948ff0fb08833f49a9fe985d3492cc11596247a64235e3"
+    },
+    {
+      "path": "apps/web/app/post-actions.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 81,
+      "sha": "2b82343b2ff9b26d25395c312203afb80a1279e58febcd126c83ca5059a710fc"
+    },
+    {
+      "path": "apps/web/app/reset/confirm/page.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 30,
+      "sha": "86785bd2044f4315c6f706344dc5b201912606ea5326c84d23762451a0b7b273"
+    },
+    {
+      "path": "apps/web/app/reset/page.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 19,
+      "sha": "33885e601b612ab45103729a8783bfd60fb39f8d9e1af0c5f1ad513124bb42ab"
+    },
+    {
+      "path": "apps/web/app/score-explain.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 52,
+      "sha": "64bfc592a603206ac750f648efc808aba135751f1e050e7c0d2d709603a1d9b1"
+    },
+    {
+      "path": "apps/web/app/settings/page.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 133,
+      "sha": "06df3137e53ab82e141f3a1264293be45f5f30562cd6a4af7d74a034fb8a1035"
+    },
+    {
+      "path": "apps/web/app/u/[username]/follow-button.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 76,
+      "sha": "27b60982c4112ef6758ca3709b5aed22fdd55e57aa48239e54a4832f7430d57c"
+    },
+    {
+      "path": "apps/web/app/u/[username]/page.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 15,
+      "sha": "d3164b53c600355258d6efe99310ced5f1b76d922876ace7c3371909870d9a5a"
+    },
+    {
+      "path": "apps/web/components/BottomNav.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 42,
+      "sha": "032dc63f07a1c24b811e3df397aeecd80edfd654fa55e119cb6e8b020694772a"
+    },
+    {
+      "path": "apps/web/components/Footer.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 13,
+      "sha": "992df6fb259a7fc6db35546d7c835b957287a10879a81325ef5d672a8e145919"
+    },
+    {
+      "path": "apps/web/components/Header.tsx",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 118,
+      "sha": "fefd20956546e9b321122ccbd929ce0892da9080ed4d5cf2fedfb6a75dda814b"
+    },
+    {
+      "path": "apps/web/lib/analytics.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 14,
+      "sha": "74326f2d8cfbcaa83aa58f218d203c8007d2e199180082bb8cbc597174e28123"
+    },
+    {
+      "path": "apps/web/lib/comments.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 30,
+      "sha": "4e7ccb51c61e807c89e608d09cc7d9e60e9d387b7e2ac31875b79bc68380ae9f"
+    },
+    {
+      "path": "apps/web/lib/notifications.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 27,
+      "sha": "69bad7574e3c774ce222157d5835bc6aea9191428b79481db0481e888ee1152c"
+    },
+    {
+      "path": "apps/web/lib/presence.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 12,
+      "sha": "9cdee2a6b22699beca98197933a2169193cd48274f058fce78140e16ad38d2ef"
+    },
+    {
+      "path": "apps/web/lib/safety.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 77,
+      "sha": "98d01f4df8775f426f5aafcd818149269e457d888fb44791a2afde7249acb336"
+    },
+    {
+      "path": "apps/web/lib/search.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 9,
+      "sha": "572c5420477f76ef88e577320d12f71afd9975a66301dd4173c2bb732425ceb9"
+    },
+    {
+      "path": "apps/web/lib/supabase/client.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 8,
+      "sha": "5846403d16a7dec5431098f88bf4297be293eed99276c3ca8e9e5ab27a7c3d60"
+    },
+    {
+      "path": "apps/web/lib/supabase/server.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 24,
+      "sha": "b8e7cc7f6425ff0cc999f3e958103d5632c1edc73c7af13d4161c490b4ef35e3"
+    },
+    {
+      "path": "apps/web/next.config.ts",
+      "role": "config",
+      "language": "TypeScript",
+      "lineCount": 7,
+      "sha": "614bce25b089c3f19b1e17a6346c74b858034040154c6621e7d35303004767cc"
+    },
+    {
+      "path": "apps/web/package.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 25,
+      "sha": "c642f3e26beabc5a7e8cb7b0cc005c0a8f39ec2e360eeb745644ed17739bfe04"
+    },
+    {
+      "path": "apps/web/postcss.config.mjs",
+      "role": "config",
+      "language": "JavaScript",
+      "lineCount": 7,
+      "sha": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde"
+    },
+    {
+      "path": "apps/web/public/favicon.svg",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "921228e10f27c4a042e60203a2066bcfc31415a94bee3c31fc72cb3c797ad2e0"
+    },
+    {
+      "path": "apps/web/public/file.svg",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4"
+    },
+    {
+      "path": "apps/web/public/globe.svg",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf"
+    },
+    {
+      "path": "apps/web/public/next.svg",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc"
+    },
+    {
+      "path": "apps/web/public/vercel.svg",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4"
+    },
+    {
+      "path": "apps/web/public/window.svg",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1"
+    },
+    {
+      "path": "apps/web/supabase/migrations/001_notifications.sql",
+      "role": "source",
+      "language": "SQL",
+      "lineCount": 54,
+      "sha": "7b365a033f04837ebce054e886a8e8ddbb81ffdb82b2b9cc3e36a2f06e7e72a3"
+    },
+    {
+      "path": "apps/web/supabase/migrations/002_comments.sql",
+      "role": "source",
+      "language": "SQL",
+      "lineCount": 48,
+      "sha": "9a2b5f1a7ba12b671be7d2d809574c825b006270807e490184b1835eb9fcecf4"
+    },
+    {
+      "path": "apps/web/supabase/migrations/003_search.sql",
+      "role": "source",
+      "language": "SQL",
+      "lineCount": 44,
+      "sha": "57a3adcaef0ad8156c7cbc0e3d4e0f057c16828fb8f76e59f6883a0e9112ac4e"
+    },
+    {
+      "path": "apps/web/supabase/migrations/004_presence.sql",
+      "role": "source",
+      "language": "SQL",
+      "lineCount": 35,
+      "sha": "3f78969b651c8248e89e1d4455e996a19d5695dea5f955e7c0827f513ba37cd6"
+    },
+    {
+      "path": "apps/web/supabase/migrations/005_analytics.sql",
+      "role": "source",
+      "language": "SQL",
+      "lineCount": 29,
+      "sha": "97108de6b2911f16a578657b63fd1516af562c0fc57e4325ff47eee7e7448a1f"
+    },
+    {
+      "path": "apps/web/supabase/migrations/006_safety.sql",
+      "role": "source",
+      "language": "SQL",
+      "lineCount": 116,
+      "sha": "4be9a03b4380bc55bd962a01f7bce1fe8e45fbe1973f16dc937ec96a6ecdc67b"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 34,
+      "sha": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3"
+    },
+    {
+      "path": "docs/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "infra/docker/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "infra/supabase/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "infra/telegram/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "package.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 19,
+      "sha": "f5c26b85a438ba84bae161659b626039295308cbfea7a050e06b96b95ea3c63c"
+    },
+    {
+      "path": "packages/config/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "packages/design/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "packages/sdk/.gitkeep",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "turbo.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 18,
+      "sha": "48b0d3b49128f7778a603b94d34f73f5102d00d0bc64a417da4432c096f1b305"
+    }
+  ]
+}
