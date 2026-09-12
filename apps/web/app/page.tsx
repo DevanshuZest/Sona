@@ -3,7 +3,6 @@ import Link from "next/link";
 import Composer from "./composer";
 import FeedModeToggle from "./feed-mode-toggle";
 import LikeButton from "./like-button";
-import LogoutButton from "./logout-button";
 import ScoreExplain from "./score-explain";
 
 export const dynamic = "force-dynamic";
@@ -68,23 +67,6 @@ export default async function Home({
 
     return (
         <div>
-            <header className="mb-8 flex items-center justify-between">
-                <div>
-                    <h1 className="text-2xl font-semibold">Sona</h1>
-                    <p className="text-sm text-[#78716C]">Stay close. Stay real.</p>
-                </div>
-                {user ? (
-                    <LogoutButton />
-                ) : (
-                    <Link
-                        href="/login"
-                        className="rounded-lg bg-[#0F766E] px-3 py-1.5 text-sm text-white hover:bg-[#0D5F58]"
-                    >
-                        Log in
-                    </Link>
-                )}
-            </header>
-
             <FeedModeToggle />
 
             {user ? (

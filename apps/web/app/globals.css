@@ -3,6 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Design tokens - Sona brand */
+  --sona-color-bg-canvas: #FDFCFA;
+  --sona-color-bg-surface: #FFFFFF;
+  --sona-color-bg-brand-soft: #F0FDFA;
+  --sona-color-text-primary: #1C1917;
+  --sona-color-text-secondary: #78716C;
+  --sona-color-text-brand: #0F766E;
+  --sona-color-text-on-brand: #FFFFFF;
+  --sona-color-border-primary: #E7E5E4;
+  --sona-color-border-brand: #0F766E;
+  --sona-color-error: #DC2626;
+  --sona-color-accent-marigold: #F59E0B;
 }
 
 @theme inline {
@@ -23,4 +35,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Focus ring for keyboard navigation */
+.focus-visible {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-offset: 2px;
+}
+
+.focus-visible *:focus {
+ outline: 2px solid var(--sona-color-text-brand);
+ outline-offset: 2px;
 }
