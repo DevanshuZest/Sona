@@ -24,6 +24,7 @@ export default async function Home({
 }) {
     const { mode } = await searchParams;
     const isRanked = mode === "ranked";
+    const isFollowing = mode === "following";
     const supabase = await createClient();
     const {
         data: { user },
@@ -38,13 +39,30 @@ export default async function Home({
         profile = data;
     }
 
-    const { data: fetchedPosts } = await supabase
+    let postsQuery = supabase
         .from("sona_posts")
         .select(
             "id, content, created_at, user_id, likes_count, boost_flag, sona_profiles ( username, display_name )"
         )
         .order("created_at", { ascending: false })
         .limit(100);
+    if (isFollowing) {
+        if (!user) {
+            postsQuery = postsQuery.eq("user_id", "00000000-0000-0000-0000-000000000000");
+        } else {
+            const { data: followingRows } = await supabase
+                .from("sona_follows")
+                .select("following_id")
+                .eq("follower_id", user.id);
+            const ids = (followingRows ?? []).map((row) => row.following_id);
+            if (ids.length === 0) {
+                postsQuery = postsQuery.eq("user_id", "00000000-0000-0000-0000-000000000000");
+            } else {
+                postsQuery = postsQuery.in("user_id", ids);
+            }
+        }
+    }
+    const { data: fetchedPosts } = await postsQuery;
     const posts = fetchedPosts ? [...fetchedPosts] : [];
     if (isRanked) posts.sort((a, b) => scoreOf(b) - scoreOf(a));
 
@@ -81,7 +99,11 @@ export default async function Home({
             )}
 
             <div className="space-y-4">
-                {posts.length ? (
+                {isFollowing && !user ? (
+                    <p className="text-sm text-[#78716C]"><Link href="/login" className="text-[#0F766E] underline">Log in</Link> to see posts from people you follow.</p>
+                ) : isFollowing && user && posts.length === 0 ? (
+                    <p className="text-sm text-[#78716C]">You&apos;re not following anyone yet. Find people and hit Follow on their profile.</p>
+                ) : posts.length ? (
                     posts.map((post) => {
                         const author = Array.isArray(post.sona_profiles)
                             ? post.sona_profiles[0]

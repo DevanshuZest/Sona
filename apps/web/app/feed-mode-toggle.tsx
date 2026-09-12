@@ -5,10 +5,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 export default function FeedModeToggle() {
     const router = useRouter();
     const params = useSearchParams();
-    const mode = params.get("mode") === "ranked" ? "ranked" : "chrono";
+    const raw = params.get("mode");
+    const mode: "chrono" | "following" | "ranked" = raw === "ranked" ? "ranked" : raw === "following" ? "following" : "chrono";
 
-    function set(next: "chrono" | "ranked") {
-        const query = next === "ranked" ? "?mode=ranked" : "";
+    function set(next: "chrono" | "following" | "ranked") {
+        const query = next === "chrono" ? "" : `?mode=${next}`;
         router.push("/" + query);
     }
 
@@ -18,18 +19,28 @@ export default function FeedModeToggle() {
                 type="button"
                 onClick={() => set("chrono")}
                 className={`rounded-md px-3 py-1 ${mode === "chrono"
-                        ? "bg-[#0F766E] text-white"
-                        : "text-[#78716C] hover:text-[#0F766E]"
+                    ? "bg-[#0F766E] text-white"
+                    : "text-[#78716C] hover:text-[#0F766E]"
                     }`}
             >
                 Chronological
             </button>
             <button
                 type="button"
+                onClick={() => set("following")}
+                className={`rounded-md px-3 py-1 ${mode === "following"
+                    ? "bg-[#0F766E] text-white"
+                    : "text-[#78716C] hover:text-[#0F766E]"
+                    }`}
+            >
+                Following
+            </button>
+            <button
+                type="button"
                 onClick={() => set("ranked")}
                 className={`rounded-md px-3 py-1 ${mode === "ranked"
-                        ? "bg-[#0F766E] text-white"
-                        : "text-[#78716C] hover:text-[#0F766E]"
+                    ? "bg-[#0F766E] text-white"
+                    : "text-[#78716C] hover:text-[#0F766E]"
                     }`}
             >
                 Ranked
