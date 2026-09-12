@@ -142,3 +142,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 sona-secrets.txt
+
+# Agent instruction files
+AGENT_*.md
