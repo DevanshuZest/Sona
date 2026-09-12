@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import BellNotification from "./BellNotification";
 
 export default function Header() {
     const pathname = usePathname();
@@ -72,6 +73,7 @@ function AuthRightElement({ pathname, focusRing, supabase, router }: {
 
     return (
         <div className="flex items-center gap-2">
+            <BellNotification userId={user?.id ?? null} />
             {user && profileUsername ? (
                 <div className="relative">
                     <button
