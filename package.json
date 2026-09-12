@@ -4,6 +4,7 @@
     "private": true,
     "description": "Privacy-first, unbiased, open-source social platform.",
     "license": "AGPL-3.0",
+    "packageManager": "npm@10.9.3",
     "workspaces": [
         "apps/*",
         "packages/*"
