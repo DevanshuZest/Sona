@@ -63,8 +63,7 @@ export default function LikeButton({
             onClick={toggle}
             disabled={loading}
             aria-label={liked ? "Unlike" : "Like"}
-            className={`flex items-center gap-1 text-sm ${liked ? "text-[#0F766E]" : "text-[#78716C] hover:text-[#0F766E]"
-                }`}
+            className={`flex items-center gap-1 text-sm ${liked ? "text-[hsl(var(--sona-text-brand))]" : "text-[hsl(var(--sona-text-secondary))] hover:text-[hsl(var(--sona-text-brand))]"}`}
         >
             <span aria-hidden>{liked ? "♥" : "♡"}</span>
             <span>{count}</span>

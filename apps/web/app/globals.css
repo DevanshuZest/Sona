@@ -18,22 +18,35 @@
   /* Sona HSL tokens (locked, dynamic theming). Use as hsl(var(--sona-*)). */
   --sona-bg-canvas: 36 33% 99%;
   --sona-bg-surface: 0 0% 100%;
+  --sona-bg-elevated: 0 0% 100%;
+  --sona-bg-glass: 0 0% 100% / 0.72;
   --sona-bg-brand-soft: 166 76% 97%;
   --sona-text-primary: 24 10% 10%;
   --sona-text-secondary: 25 5% 45%;
   --sona-text-tertiary: 25 5% 64%;
   --sona-text-brand: 174 77% 26%;
   --sona-text-on-brand: 0 0% 100%;
+  --sona-text-success: 142 71% 45%;
+  --sona-text-warning: 38 92% 50%;
+  --sona-text-danger: 0 72% 51%;
   --sona-border-primary: 20 5% 90%;
   --sona-border-brand: 174 77% 26%;
+  --sona-border-glass: 0 0% 100% / 0.4;
   --sona-error: 0 72% 51%;
   --sona-marigold: 38 92% 50%;
   --sona-radius: 12px;
   --sona-radius-lg: 16px;
-  --sona-shadow-soft: 0 1px 2px rgba(28,25,23,0.04),
-    0 8px 24px -12px rgba(28,25,23,0.08);
+  --sona-radius-sm: 8px;
+  --sona-radius-xl: 24px;
+  --sona-shadow-soft: 0 1px 2px rgba(28, 25, 23, 0.04),
+    0 8px 24px -12px rgba(28, 25, 23, 0.08);
   --sona-ring-width: 2px;
   --sona-ring-offset: 2px;
+  --sona-glow: 174 77% 26% / 0.15;
+  --sona-dur-fast: 120ms;
+  --sona-dur: 200ms;
+  --sona-dur-slow: 320ms;
+  --sona-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @theme inline {
@@ -56,6 +69,32 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+*:focus-visible {
+  outline: var(--sona-ring-width) solid hsl(var(--sona-text-brand));
+  outline-offset: var(--sona-ring-offset);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sona-interactive {
+    transition: color var(--sona-dur) var(--sona-ease),
+      background-color var(--sona-dur) var(--sona-ease),
+      border-color var(--sona-dur) var(--sona-ease),
+      box-shadow var(--sona-dur) var(--sona-ease),
+      transform var(--sona-dur) var(--sona-ease);
+  }
+
+  .sona-card-hover:hover {
+    box-shadow: var(--sona-shadow-soft);
+    transform: translateY(-2px);
+  }
+}
+
+.sona-glass {
+  background: hsl(var(--sona-bg-glass));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
 /* Focus ring for keyboard navigation */
 .focus-visible {
   outline-width: 2px;
@@ -64,8 +103,8 @@ body {
 }
 
 .focus-visible *:focus {
- outline: 2px solid var(--sona-color-text-brand);
- outline-offset: 2px;
+  outline: 2px solid var(--sona-color-text-brand);
+  outline-offset: 2px;
 }
 
 /* prefers-reduced-motion: disable shimmer/spring, keep static layout */
@@ -73,15 +112,54 @@ body {
   .animate-pulse {
     animation: none;
   }
+
   .animate-bounce {
     animation: none;
   }
+
   .sona-spring {
     transition-property: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 /* Thin brand scrollbar for panels */
 .sona-scrollbar {
   scrollbar-width: thin;
+}
+
+/* Heart burst (double-tap / like feedback) */
+.sona-heart-burst {
+  animation: sona-heart 560ms ease-out;
+}
+
+@keyframes sona-heart {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.2;
+  }
+
+  35% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sona-heart-burst {
+    animation: none;
+  }
 }
