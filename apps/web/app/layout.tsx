@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import MeshBackground from "@/components/ui/MeshBackground";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import ScrollProgress from "@/components/ui/ScrollProgress";
+import { ToastProvider } from "@/components/ui/ToastProvider";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import CookieConsent from "@/components/CookieConsent";
@@ -29,20 +30,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[var(--sona-color-bg-canvas)] text-[var(--sona-color-text-primary)]`}>
-        <MeshBackground />
-        <NoiseOverlay />
-        <ScrollProgress />
-        <Header />
-        <main className="mx-auto w-full max-w-[1320px] px-4 py-6 pb-20 sm:pb-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-[80px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)_320px]">
-            <SidebarNav />
-            <div className="min-w-0 max-w-[640px] mx-auto">{children}</div>
-            <ContextPanel />
-          </div>
-        </main>
-        <Footer />
-        <BottomNav />
-        <CookieConsent />
+        <ToastProvider>
+          <MeshBackground />
+          <NoiseOverlay />
+          <ScrollProgress />
+          <Header />
+          <main className="mx-auto w-full max-w-[1320px] px-4 py-6 pb-20 sm:pb-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[80px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)_320px]">
+              <SidebarNav />
+              <div className="min-w-0 max-w-[640px] mx-auto">{children}</div>
+              <ContextPanel />
+            </div>
+          </main>
+          <Footer />
+          <BottomNav />
+          <CookieConsent />
+        </ToastProvider>
       </body>
     </html>
   );

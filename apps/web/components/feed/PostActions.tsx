@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Icon from "../ui/Icon";
 import Sheet from "../ui/Sheet";
-import Toast from "../ui/Toast";
+import { useToast } from "../ui/ToastProvider";
 
 export default function PostActions({
     postId,
@@ -13,43 +13,38 @@ export default function PostActions({
 }) {
     const [saved, setSaved] = useState(false);
     const [shareOpen, setShareOpen] = useState(false);
-    const [toast, setToast] = useState("");
-
-    const showToast = (message: string) => {
-        setToast(message);
-        window.setTimeout(() => setToast(""), 1800);
-    };
+    const { show } = useToast();
 
     const toggleSave = () => {
         const next = !saved;
         setSaved(next);
-        showToast(next ? "Saved" : "Removed");
+        show(next ? "Saved" : "Removed", "success");
     };
 
     const copyLink = async () => {
         const url = `${window.location.origin}/p/${postId}`;
         try {
             await navigator.clipboard.writeText(url);
-            showToast("Link copied");
+            show("Link copied", "success");
         } catch {
-            showToast(url);
+            show("Could not copy link", "error");
         }
         setShareOpen(false);
     };
 
     const nativeShare = () => {
         const url = `${window.location.origin}/p/${postId}`;
-        if (typeof navigator.share === "function") {
-            navigator.share({ url }).catch(() => showToast("Copy link instead"));
+        const share = (navigator as { share?: (d: { url: string }) => Promise<void> }).share;
+        if (typeof share === "function") {
+            share({ url }).catch(() => show("Copy link instead", "info"));
         } else {
-            showToast("Press Copy link");
+            show("Press Copy link", "info");
         }
         setShareOpen(false);
     };
 
     const iconBtn = (active: boolean) =>
-        `flex h-10 w-10 items-center justify-center rounded-full ${
-            active ? "text-[hsl(var(--sona-text-brand))]" : "text-[hsl(var(--sona-text-secondary))]"
+        `flex h-10 w-10 items-center justify-center rounded-full ${active ? "text-[hsl(var(--sona-text-brand))]" : "text-[hsl(var(--sona-text-secondary))]"
         } hover:bg-[hsl(var(--sona-bg-brand-soft))]`;
 
     return (
@@ -91,7 +86,7 @@ export default function PostActions({
                     <button
                         type="button"
                         onClick={nativeShare}
-                        disabled={typeof navigator.share !== "function"}
+                        disabled={typeof (navigator as any).share !== "function"}
                         className="flex min-h-[44px] items-center gap-3 rounded-lg px-4 text-sm font-medium text-[hsl(var(--sona-text-primary))] hover:bg-[hsl(var(--sona-bg-brand-soft))] disabled:opacity-50"
                     >
                         <Icon name="share" /> Share…
@@ -99,10 +94,6 @@ export default function PostActions({
                 </div>
             </Sheet>
 
-            <Toast show={toast !== ""}>
-                <Icon name="check" size={16} className="mr-2 inline-block" />
-                {toast}
-            </Toast>
         </div>
     );
 }
