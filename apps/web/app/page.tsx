@@ -4,6 +4,7 @@ import Composer from "./composer";
 import FeedModeToggle from "./feed-mode-toggle";
 import LikeButton from "./like-button";
 import ScoreExplain from "./score-explain";
+import PostActions from "./post-actions";
 
 export const dynamic = "force-dynamic";
 
@@ -93,11 +94,8 @@ export default async function Home({
                         const ageHours =
                             (Date.now() - new Date(post.created_at).getTime()) / 3_600_000;
                         return (
-                            <article
-                                key={post.id}
-                                className="rounded-xl border border-[#E7E5E4] bg-white p-4"
-                            >
-                                {author ? (
+                            <article key={post.id} className="rounded-xl border border-[#E7E5E4] bg-white p-4 relative">
+                                {author && (
                                     <Link
                                         href={`/u/${author.username}`}
                                         className="mb-1 block text-sm text-[#0F766E] hover:underline"
@@ -105,13 +103,13 @@ export default async function Home({
                                         {author.display_name}{" "}
                                         <span className="text-[#78716C]">@{author.username}</span>
                                     </Link>
-                                ) : (
-                                    <p className="mb-1 text-sm text-[#78716C]">Unknown</p>
                                 )}
                                 <p className="whitespace-pre-wrap">{post.content}</p>
                                 <div className="mt-2 flex items-center justify-between">
                                     <p className="text-xs text-[#78716C]">
-                                        {new Date(post.created_at).toLocaleString()}
+                                        <Link href={`/p/${post.id}`} className="hover:underline">
+                                            {new Date(post.created_at).toLocaleString()}
+                                        </Link>
                                     </p>
                                     <LikeButton
                                         postId={post.id}
@@ -126,6 +124,11 @@ export default async function Home({
                                         ageHours={ageHours}
                                     />
                                 )}
+                                <PostActions
+                                    postId={post.id}
+                                    authorId={post.user_id}
+                                    viewerId={user?.id ?? null}
+                                />
                             </article>
                         );
                     })
