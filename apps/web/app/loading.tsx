@@ -1,31 +1,27 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 export default function Loading() {
-    const [reducedMotion, setReducedMotion] = useState(false);
-
-    useEffect(() => {
-        const matchMedia = (window as any).matchMedia;
-        if (typeof matchMedia === "function") {
-            const mq = matchMedia("(prefers-reduced-motion: reduce)");
-            setReducedMotion(mq.matches);
-            mq.addEventListener("change", (e: any) => setReducedMotion(e.matches));
-            return () => mq.removeEventListener("change", () => { });
-        }
-    }, []);
-
-    const pulse = reducedMotion ? "" : "animate-pulse";
-
     return (
-        <div className="space-y-4">
-            {[...Array(3)].map((_, i) => (
-                <div key={i} className={`h-28 rounded-xl border border-[hsl(var(--sona-border-primary))] bg-[hsl(var(--sona-bg-surface))] p-4 ${pulse}`}>
-                    <div className="mb-3 h-4 w-32 rounded bg-[hsl(var(--sona-bg-brand-soft))]" />
-                    <div className="mb-2 h-4 w-full rounded bg-[hsl(var(--sona-bg-brand-soft))]" />
-                    <div className="h-4 w-2/3 rounded bg-[hsl(var(--sona-bg-brand-soft))]" />
-                </div>
-            ))}
+        <div className="mx-auto w-full max-w-[1320px] px-4 py-6" aria-busy="true" role="status" aria-label="Loading feed">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[80px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)_320px]">
+                <aside className="hidden space-y-2 md:block">
+                    {[...Array(5)].map((_, index) => (
+                        <div key={index} className="h-10 w-full rounded-lg bg-[#F5F3F0] animate-pulse" />
+                    ))}
+                </aside>
+                <main className="space-y-4">
+                    {[...Array(3)].map((_, index) => (
+                        <div key={index} className="rounded-xl border border-[#E7E5E4] bg-white p-4">
+                            <div className="mb-3 h-4 w-32 rounded bg-[#F5F3F0] animate-pulse" />
+                            <div className="mb-2 h-4 w-full rounded bg-[#F5F3F0] animate-pulse" />
+                            <div className="h-4 w-2/3 rounded bg-[#F5F3F0] animate-pulse" />
+                        </div>
+                    ))}
+                </main>
+                <aside className="hidden space-y-4 lg:block">
+                    {[...Array(2)].map((_, index) => (
+                        <div key={index} className="h-32 w-full rounded-xl bg-[#F5F3F0] animate-pulse" />
+                    ))}
+                </aside>
+            </div>
         </div>
     );
 }

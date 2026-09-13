@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { useToast } from "@/components/ui/ToastProvider";
 
 export default function LikeButton({
     postId,
@@ -18,6 +19,7 @@ export default function LikeButton({
     const [liked, setLiked] = useState(false);
     const [count, setCount] = useState(initialCount);
     const [loading, setLoading] = useState(false);
+    const toast = useToast();
 
     useEffect(() => {
         if (!userId) return;
@@ -38,20 +40,32 @@ export default function LikeButton({
         }
         setLoading(true);
         if (liked) {
-            await supabase
+            const { error } = await supabase
                 .from("sona_reactions")
                 .delete()
                 .eq("post_id", postId)
                 .eq("user_id", userId)
                 .eq("kind", "like");
+            if (error) {
+                toast.show("Could not update like", "error");
+                setLoading(false);
+                return;
+            }
             setLiked(false);
             setCount((current) => Math.max(current - 1, 0));
+            toast.show("Unliked", "info");
         } else {
-            await supabase
+            const { error } = await supabase
                 .from("sona_reactions")
                 .insert({ post_id: postId, user_id: userId, kind: "like" });
+            if (error) {
+                toast.show("Could not update like", "error");
+                setLoading(false);
+                return;
+            }
             setLiked(true);
             setCount((current) => current + 1);
+            toast.show("Liked", "success");
         }
         setLoading(false);
         router.refresh();
