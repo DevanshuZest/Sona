@@ -1,20 +1,39 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
+type SuggestedProfile = {
+    id: string;
+    username: string;
+    display_name: string;
+    bio: string | null;
+};
+
+type PresenceRow = {
+    user_id: string;
+    status: string | null;
+    last_seen: string;
+    sona_profiles: SuggestedProfile | SuggestedProfile[] | null;
+};
+
 export default async function ContextPanel() {
     const supabase = await createClient();
 
-    const { data: suggestions } = await supabase
+    const { data, error } = await supabase
         .from("sona_profiles")
-        .select("username, display_name, bio")
-        .limit(3);
+        .select("id, username, display_name, bio")
+        .limit(5);
 
-    const { data: presenceRows } = await supabase
+    const suggestions: SuggestedProfile[] = !error && data
+        ? (data as SuggestedProfile[])
+        : [];
+
+    const { data: presenceData } = await supabase
         .from("sona_presence")
         .select("user_id, status, last_seen, sona_profiles ( username, display_name )")
         .limit(5)
         .order("last_seen", { ascending: false });
 
+    const presenceRows = (presenceData ?? []) as PresenceRow[];
     const online = (presenceRows ?? []).filter((r) => r.status && r.status !== "offline");
 
     return (
@@ -23,9 +42,9 @@ export default async function ContextPanel() {
                 <h2 className="text-xs font-semibold uppercase text-[hsl(var(--sona-text-secondary))]">
                     Who to follow
                 </h2>
-                {(suggestions ?? []).length ? (
+                {suggestions.length ? (
                     <div className="mt-4 flex flex-col gap-2">
-                        {suggestions.map((s) => (
+                        {suggestions.map((s: SuggestedProfile) => (
                             <Link
                                 key={s.username}
                                 href={`/u/${s.username}`}
