@@ -157,3 +157,44 @@ npm test
 
 Snapshots are reviewed line-by-line on update. Never regenerate without
 reading the diff.
+
+## Agent Behavior Rules (NON-NEGOTIABLE)
+
+### Tool Discipline
+- NEVER emit raw tool-call XML/tags into chat output. Tool calls are
+  silent. If a tool fails, report the failure in prose; do not leak
+  schema tags.
+- Use only the tool schema this environment exposes. Do not invent
+  commands (e.g., `ls`, `dirPath`, `catPath`). If you're unsure, ask.
+- Batch read operations: one view/read call per file. Do not re-read
+  the same file within the same task.
+- If a step fails twice with the same error, STOP and report. Do not
+  retry a third time. Do not enter a loop.
+
+### Execution Discipline
+- Do not list directories more than once per task. If you need to know
+  what's in a folder, list it once, remember the output, move on.
+- One logical step → one tool call → one sentence of reasoning → next
+  step. Never issue 5 read calls in a row without producing output.
+- When in doubt, ask for the specific file path instead of searching.
+
+### Output Discipline
+- Never emit prose between file blocks when the prompt asks for
+  structured output.
+- Never emit reasoning about which tool you're about to call.
+- Never emit a summary longer than 6 lines unless asked.
+
+## UI Compliance Rules
+
+- Every <img> must have explicit width + height OR an aspect-ratio
+  wrapper. No exceptions. This prevents Cumulative Layout Shift (CLS).
+- Every color must be a token: bg-[hsl(var(--sona-*))] or a Tailwind
+  utility derived from a token. Hardcoded hex (#xxxxxx) is banned
+  everywhere except the Google brand mark in login.
+- Every route must inherit <Header /> and <Footer /> from layout.tsx.
+  Never render a page without a persistent header.
+- Every route segment must have a loading.tsx with skeleton UI. Full-
+  page spinners (animate-spin) are banned.
+- Every spacing value must be a Tailwind scale step (2, 4, 6, 8, 10, 12).
+  Arbitrary values like p-[13px] or mt-[7px] are banned.
+- Every interactive element must have a visible focus ring.

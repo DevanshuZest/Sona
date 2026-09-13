@@ -21,32 +21,32 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
                     <div className="flex justify-end">
                         <Link
                             href="/settings"
-                            className="rounded-lg border border-[#E7E5E4] bg-white px-3 h-9 inline-flex items-center text-sm text-[#1C1917] hover:border-[#0F766E]"
+                            className="inline-flex h-9 items-center rounded-lg border border-[hsl(var(--sona-border-primary))] bg-[hsl(var(--sona-bg-surface))] px-3 text-sm text-[hsl(var(--sona-text-primary))] hover:border-[hsl(var(--sona-border-brand))]"
                         >
                             Edit profile
                         </Link>
                     </div>
                 )}
-                <h1 className="text-2xl font-semibold text-[#1C1917]">{profile.display_name}</h1>
-                <p className="text-sm text-[#0F766E]">@{profile.username}</p>
-                {profile.bio && <p className="mt-3 text-[#78716C]">{profile.bio}</p>}
-                <p className="mt-2 text-xs text-[#78716C]">Joined {new Date(profile.created_at).toLocaleDateString()}</p>
-                <div className="mt-2 flex items-center gap-4 text-sm text-[#78716C]">
-                    <span><strong className="text-[#1C1917]">{followerCount ?? 0}</strong> followers</span>
-                    <span><strong className="text-[#1C1917]">{followingCount ?? 0}</strong> following</span>
+                <h1 className="text-2xl font-semibold text-[hsl(var(--sona-text-primary))]">{profile.display_name}</h1>
+                <p className="text-sm text-[hsl(var(--sona-text-brand))]">@{profile.username}</p>
+                {profile.bio && <p className="mt-3 text-[hsl(var(--sona-text-secondary))]">{profile.bio}</p>}
+                <p className="mt-2 text-xs text-[hsl(var(--sona-text-secondary))]">Joined {new Date(profile.created_at).toLocaleDateString()}</p>
+                <div className="mt-2 flex items-center gap-4 text-sm text-[hsl(var(--sona-text-secondary))]">
+                    <span><strong className="text-[hsl(var(--sona-text-primary))]">{followerCount ?? 0}</strong> followers</span>
+                    <span><strong className="text-[hsl(var(--sona-text-primary))]">{followingCount ?? 0}</strong> following</span>
                     <FollowButton viewerId={viewer?.id ?? null} targetId={profile.id} />
                 </div>
             </header>
             <div className="space-y-4">
                 {posts?.length ? (
                     posts.map((post) => (
-                        <article key={post.id} className="rounded-xl border border-[#E7E5E4] bg-white p-4">
+                        <article key={post.id} className="rounded-xl border border-[hsl(var(--sona-border-primary))] bg-[hsl(var(--sona-bg-surface))] p-4">
                             <p className="whitespace-pre-wrap">{post.content}</p>
-                            <p className="mt-2 text-xs text-[#78716C]">{new Date(post.created_at).toLocaleString()}</p>
+                            <p className="mt-2 text-xs text-[hsl(var(--sona-text-secondary))]">{new Date(post.created_at).toLocaleString()}</p>
                         </article>
                     ))
                 ) : (
-                    <p className="text-sm text-[#78716C]">No posts yet.</p>
+                    <p className="text-sm text-[hsl(var(--sona-text-secondary))]">No posts yet.</p>
                 )}
             </div>
         </div>

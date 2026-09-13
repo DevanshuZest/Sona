@@ -50,7 +50,7 @@ export default function BellNotification({ userId }: { userId: string | null }) 
     return (
         <button
             onClick={() => router.push("/notifications")}
-            className="relative rounded-full p-2 text-[#78716C] hover:bg-[#F0FDFA]"
+            className="relative rounded-full p-2 text-[hsl(var(--sona-text-secondary))] hover:bg-[hsl(var(--sona-bg-brand-soft))]"
             aria-label="Notifications"
         >
             <svg
@@ -67,7 +67,7 @@ export default function BellNotification({ userId }: { userId: string | null }) 
             </svg>
             {unreadCount > 0 && (
                 <span
-                    className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#DC2626] text-white text-xs"
+                    className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--sona-error))] text-[hsl(var(--sona-text-on-brand))] text-xs"
                     aria-label={`${unreadCount} unread notifications`}
                 >
                     {unreadCount > 99 ? "99+" : unreadCount}

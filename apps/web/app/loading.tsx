@@ -11,7 +11,7 @@ export default function Loading() {
             const mq = matchMedia("(prefers-reduced-motion: reduce)");
             setReducedMotion(mq.matches);
             mq.addEventListener("change", (e: any) => setReducedMotion(e.matches));
-            return () => mq.removeEventListener("change", () => {});
+            return () => mq.removeEventListener("change", () => { });
         }
     }, []);
 
@@ -20,10 +20,10 @@ export default function Loading() {
     return (
         <div className="space-y-4">
             {[...Array(3)].map((_, i) => (
-                <div key={i} className={`rounded-xl border border-[#E7E5E4] bg-white p-4 h-28 ${pulse}`}>
-                    <div className="h-4 w-32 rounded bg-[#F5F3F0] mb-3" />
-                    <div className="h-4 w-full rounded bg-[#F5F3F0] mb-2" />
-                    <div className="h-4 w-2/3 rounded bg-[#F5F3F0]" />
+                <div key={i} className={`h-28 rounded-xl border border-[hsl(var(--sona-border-primary))] bg-[hsl(var(--sona-bg-surface))] p-4 ${pulse}`}>
+                    <div className="mb-3 h-4 w-32 rounded bg-[hsl(var(--sona-bg-brand-soft))]" />
+                    <div className="mb-2 h-4 w-full rounded bg-[hsl(var(--sona-bg-brand-soft))]" />
+                    <div className="h-4 w-2/3 rounded bg-[hsl(var(--sona-bg-brand-soft))]" />
                 </div>
             ))}
         </div>

@@ -73,8 +73,8 @@ export default async function Home({
             {user ? (
                 <Composer userId={user.id} username={profile?.username} />
             ) : (
-                <p className="mb-6 text-sm text-[#78716C]">
-                    <Link href="/login" className="text-[#0F766E] underline">
+                <p className="mb-6 text-sm text-[hsl(var(--sona-text-secondary))]">
+                    <Link href="/login" className="text-[hsl(var(--sona-text-brand))] underline">
                         Log in
                     </Link>{" "}
                     to post.
@@ -83,9 +83,9 @@ export default async function Home({
 
             <div className="space-y-4">
                 {isFollowing && !user ? (
-                    <p className="text-sm text-[#78716C]"><Link href="/login" className="text-[#0F766E] underline">Log in</Link> to see posts from people you follow.</p>
+                    <p className="text-sm text-[hsl(var(--sona-text-secondary))]"><Link href="/login" className="text-[hsl(var(--sona-text-brand))] underline">Log in</Link> to see posts from people you follow.</p>
                 ) : isFollowing && user && posts.length === 0 ? (
-                    <p className="text-sm text-[#78716C]">You&apos;re not following anyone yet. Find people and hit Follow on their profile.</p>
+                    <p className="text-sm text-[hsl(var(--sona-text-secondary))]">You&apos;re not following anyone yet. Find people and hit Follow on their profile.</p>
                 ) : posts.length ? (
                     posts.map((post) => {
                         const author = Array.isArray(post.sona_profiles)
@@ -94,19 +94,19 @@ export default async function Home({
                         const ageHours =
                             (Date.now() - new Date(post.created_at).getTime()) / 3_600_000;
                         return (
-                            <article key={post.id} className="rounded-xl border border-[#E7E5E4] bg-white p-4 relative">
+                            <article key={post.id} className="relative rounded-xl border border-[hsl(var(--sona-border-primary))] bg-[hsl(var(--sona-bg-surface))] p-4">
                                 {author && (
                                     <Link
                                         href={`/u/${author.username}`}
-                                        className="mb-1 block text-sm text-[#0F766E] hover:underline"
+                                        className="mb-1 block text-sm text-[hsl(var(--sona-text-brand))] hover:underline"
                                     >
                                         {author.display_name}{" "}
-                                        <span className="text-[#78716C]">@{author.username}</span>
+                                        <span className="text-[hsl(var(--sona-text-secondary))]">@{author.username}</span>
                                     </Link>
                                 )}
                                 <p className="whitespace-pre-wrap">{post.content}</p>
                                 <div className="mt-2 flex items-center justify-between">
-                                    <p className="text-xs text-[#78716C]">
+                                    <p className="text-xs text-[hsl(var(--sona-text-secondary))]">
                                         <Link href={`/p/${post.id}`} className="hover:underline">
                                             {new Date(post.created_at).toLocaleString()}
                                         </Link>
@@ -133,7 +133,7 @@ export default async function Home({
                         );
                     })
                 ) : (
-                    <p className="text-sm text-[#78716C]">No posts yet.</p>
+                    <p className="text-sm text-[hsl(var(--sona-text-secondary))]">No posts yet.</p>
                 )}
             </div>
         </div>
