@@ -163,3 +163,43 @@ body {
     animation: none;
   }
 }
+
+.sona-mesh-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 20% 30%,
+      rgba(15, 118, 110, 0.06), transparent 60%),
+    radial-gradient(50% 40% at 80% 20%,
+      rgba(245, 158, 11, 0.04), transparent 60%),
+    radial-gradient(70% 60% at 50% 90%,
+      rgba(240, 253, 250, 0.80), transparent 70%);
+  animation: sona-mesh-drift 40s ease-in-out infinite alternate;
+}
+
+@keyframes sona-mesh-drift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%;
+  }
+
+  100% {
+    background-position: 20% 10%, 80% 20%, 40% 80%;
+  }
+}
+
+.sona-noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sona-mesh-bg {
+    animation: none;
+  }
+}
